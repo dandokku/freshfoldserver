@@ -55,7 +55,7 @@ if (!config.get("jwtPrivateKey")) {
 }
 
 // Connecting to the Database
-mongoose.connect("mongodb://127.0.0.1:27017/freshfold")
+mongoose.connect("mongodb+srv://jesulobadaniel1:JvxeDaTl2J86f3GJ@freshfold.nktdo.mongodb.net/?retryWrites=true&w=majority&appName=freshfold")
     .then(() => console.log("Connected to the Fresh Fold Database Successfully, We are In Boys"))
     .catch(err => console.log(`Error: ${err}`));
 

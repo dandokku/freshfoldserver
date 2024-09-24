@@ -2,7 +2,7 @@ const express = require("express");
 const { Admins, validateAdmin } = require("../Models/admin");
 const route = express.Router();
 const _  = require("lodash");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const adminAuth = require("../Middleware/admin-auth");
 
 route.get("/", async (req, res) => {

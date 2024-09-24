@@ -1,7 +1,7 @@
 const express = require("express");
 const Joi = require("joi");
 const route = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { Users } = require("../Models/users");
 const config = require("config");
 const _ = require("lodash");
