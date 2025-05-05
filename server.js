@@ -20,21 +20,20 @@ app.use(cookieParser());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: true }));
 
-// Set CORS headers first
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000', 'http://localhost:3001');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Access-Control-Expose-Headers', 'x-auth-token, x-auth-admin-token');
-    res.setHeader('Access-Control-Allow-Credentials', 'true'); // Allow credentials (cookies)
-    next();
-});
-
 // Enable CORS middleware
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001'],
+    origin: function (origin, callback) {
+        const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
+    exposedHeaders: ['x-auth-token', 'x-auth-admin-token'],
 }));
+
 
 // Continue with other middleware
 app.use(express.json());
