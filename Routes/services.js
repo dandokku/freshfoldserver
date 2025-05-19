@@ -69,7 +69,8 @@ route.put("/:id", async (req, res, next) => {
 
 
 route.delete("/:id", async (req, res) => {
-    const service = await Services.findByIdAndRemove(req.params.id, { new: true });
+    const service = await Services.findByIdAndDelete(req.params.id);
+
 
     if(!service) return res.status(404).send("The Service with the given id does not exist...");
 

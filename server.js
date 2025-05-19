@@ -7,6 +7,7 @@ const userRoute = require("./Routes/users");
 const bookingRoute = require("./Routes/bookings");
 const auth = require("./Routes/auth");
 const adminRoute = require("./Routes/admin");
+const createAdminRoute = require("./Routes/create-admin"); // adjust path
 const adminAuth = require("./Routes/admin-auth");
 const checkOut = require("./Routes/checkout");
 const webhookRoute = require("./Routes/webhook.js");
@@ -44,6 +45,7 @@ app.use("/api/auth", auth)
 app.use("/api/admin-auth", adminAuth); 
 app.use("/api/checkout-session", checkOut);
 app.use("/api/admins", adminRoute);
+app.use("/api/setup", createAdminRoute);
 app.use("/api/admin-auth", adminAuth);
 app.use("/api/prices", priceRoute);
 app.use("/api/stripe", webhookRoute);
