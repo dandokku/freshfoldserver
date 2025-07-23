@@ -65,18 +65,18 @@ function validateAdmin(admin) {
 
 // async function createAdmin() {
 //     const admin = new Admins({
-//         firstName: "Kami",
-//         lastName: "Dandokku",
-//         address: "Beside the River, GRA, Abuja",
-//         phoneNo: "08102918291",
-//         email: "kamidandokku1@gmail.com",
+//         firstName: "Kamik",
+//         lastName: "Dandokkuk",
+//         address: "Beside the Rivermm, GRA, Abuja",
+//         phoneNo: "08102918671",
+//         email: "kamidandokku11@gmail.com",
 //         password: "kami1",
 //     })
 
 //     const result = await admin.save();
-//     console.log(result)
+//    console.log(result)
 // }
-
+// I hope no issues here
 // createAdmin()
 
 module.exports.Admins = Admins;
