@@ -63,21 +63,21 @@ function validateAdmin(admin) {
     return schema.validate(admin)
 }
 
-async function createAdmin() {
-     const admin = new Admins({
-         firstName: "Kamik",
-         lastName: "Dandokkuk",
-         address: "Beside the Rivermm, GRA, Abuja",
-         phoneNo: "08102918671",
-         email: "kamidandokku11@gmail.com",
-         password: "kami1",
-     })
+// async function createAdmin() {
+//     const admin = new Admins({
+//         firstName: "Kamik",
+//         lastName: "Dandokkuk",
+//         address: "Beside the Rivermm, GRA, Abuja",
+//         phoneNo: "08102918671",
+//         email: "kamidandokku11@gmail.com",
+//         password: "kami1",
+//     })
 
-     const result = await admin.save();
-     console.log(result)
- }
-
-createAdmin()
+//     const result = await admin.save();
+//    console.log(result)
+// }
+// I hope no issues here
+// createAdmin()
 
 module.exports.Admins = Admins;
 module.exports.validateAdmin = validateAdmin;
