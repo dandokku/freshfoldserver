@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ limit: '20mb', extended: true }));
 // Enable CORS middleware
 app.use(cors({
     origin: function (origin, callback) {
-        const allowedOrigins = ['https://freshfold.netlify.app','http://localhost:3000', 'http://localhost:3001'];
+        const allowedOrigins = ['https://freshfold.netlify.app', 'https://freshfoldadmin.netlify.app', 'http://localhost:3000', 'http://localhost:3001'];
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
